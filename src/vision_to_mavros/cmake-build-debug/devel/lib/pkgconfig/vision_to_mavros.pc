@@ -1,0 +1,8 @@
+prefix=/home/zph/ros_ws/aruco_ws/src/vision_to_mavros/cmake-build-debug/devel
+
+Name: vision_to_mavros
+Description: Description of vision_to_mavros
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

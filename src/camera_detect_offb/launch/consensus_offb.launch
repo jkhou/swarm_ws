@@ -1,0 +1,11 @@
+<launch>
+	<arg name="swarm_ID" default="0"/>
+	<arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+	<node name="$(anon consensus_offb)" pkg="camera_detect" type="consensus_offb" output="screen">
+		<param name="ctrl_rate" value="30"/>
+		<param name="swarm_ID" value="$(arg swarm_ID)"/>
+		<param name="uav_init_x" value="$(arg x)"/>
+        <param name="uav_init_y" value="$(arg y)"/>
+	</node>
+</launch>

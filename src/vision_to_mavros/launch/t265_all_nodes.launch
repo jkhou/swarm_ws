@@ -1,0 +1,19 @@
+<launch>
+    <arg name="swarm_ID" default="2"/>
+    <!-- Launch 3 nodes as below
+    At development stage, each node should be launched in a separated terminal to view the output -->
+
+    <!-- This node will launch the ROS driver for Realsense T265 -->
+    <group ns="uav$(arg swarm_ID)">
+        <include file="$(find realsense2_camera)/launch/rs_t265.launch"/>
+    </group>
+
+    <!-- This node will launch MAVROS -->
+    <!-- <include file="$(find mavros)/launch/px4.launch"/> -->
+   
+    
+    <!-- This node will launch the node that bridges realsense-ros and MAVROS -->
+    <include file="$(find vision_to_mavros)/launch/t265_tf_to_mavros.launch">
+        <arg name="swarm_ID" value="$(arg swarm_ID)"/>
+    </include>
+</launch>

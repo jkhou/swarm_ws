@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/zph/ros_ws/uwb_ws/src/camera_detect/cmake-build-debug/devel/setup.sh

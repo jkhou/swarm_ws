@@ -1,0 +1,36 @@
+<launch>
+
+<!-- usb_cam detect node -->
+	<arg name="swarm_ID" default="0"/>
+	<arg name="cam_ID" default="11"/>
+	<arg name="DisplayPic" default="False"/>
+	<arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+	<node name="$(anon usbcam_aruco_detect)" pkg="camera_detect" type="usbcam_aruco_detect" output="screen">
+		<rosparam command="load" file="$(find camera_detect)/cfg/CAM$(arg cam_ID)_800x600_param.yaml" />
+		<param name="DisplayPic" value="$(arg DisplayPic)"/>
+		<param name="usbcam_index" value="0"/>
+		<param name="aruco_dic_index" value="4"/>
+		<param name="aruco_size" value="0.048"/>
+		<param name="aruco_id_bound_upper" value="4"/>
+		<param name="aruco_id_bound_lower" value="1"/>
+		<param name="pub_rate" value="25"/>
+		<param name="swarm_ID" value="$(arg swarm_ID)"/>
+		<param name="uav_init_x" value="$(arg x)"/>
+        <param name="uav_init_y" value="$(arg y)"/>
+	</node>
+
+<!-- ft servo rotate node	 -->
+	<arg name="usb_port_name" default="/dev/ttyUSB0"/>
+
+	<node name="$(anon ft_servo_control)" pkg="ftmotor" type="ft_servo_control" output="screen">
+        <param name="swarm_ID" value="$(arg swarm_ID)"/>
+		<param name="usb_port_name" value="$(arg usb_port_name)"/>
+		<param name="baud_rate" value="57600"/>
+		<param name="pos_offset" value="0"/>
+		<param name="ft_servo_rotate_speed" value="300"/>
+		<param name="ft_servo_rotate_duration" value="0.1"/>
+		<param name="pub_rate" value="30"/>
+	</node>
+
+</launch>

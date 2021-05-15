@@ -1,0 +1,29 @@
+    <launch>
+        <arg name="swarm_ID" default="2"/>
+        <arg name="fcu_url" default="/dev/ttyUSB2:921600"/>
+        <!-- <arg name="uwb_port" default="/dev/ttyUSB3"/> -->
+<!--         start mavros -->
+        <group ns="uav$(arg swarm_ID)">
+            <!-- MAVROS -->
+            <include file="$(find mavros)/launch/px4.launch">
+                <arg name="fcu_url" value="$(arg fcu_url)"/>
+                <arg name="gcs_url" value=""/>
+            </include>
+        </group>
+<!--         start t265 -->
+        <include file="$(find vision_to_mavros)/launch/t265_all_nodes.launch">
+                <arg name="swarm_ID" value="$(arg swarm_ID)"/>
+        </include>
+
+<!--         start uwb -->
+        <!-- <group ns="uav$(arg swarm_ID)">
+                <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen">
+                        <param name="port_name" value="$(arg uwb_port)" />
+                        <param name="baud_rate" value="921600" />
+                </node>
+        </group> -->
+
+        <!-- <node pkg="nlink_parser" type="uwb_recv" name="uwb_recv" output="screen">
+            <param name="swarm_ID" value="$(arg swarm_ID)"/>
+        </node> -->
+    </launch>

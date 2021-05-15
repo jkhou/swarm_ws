@@ -1,0 +1,7 @@
+<launch>
+
+	<node pkg="motor" name="motor_driver" type="motor_driver" output="screen"/>
+
+	<node pkg="motor" name="Posi_Vel_pubandsub" type="Posi_Vel_pubandsub" output="screen"/>
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/up/catkin_ws/devel
+
+Name: ftmotor
+Description: Description of ftmotor
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: message_runtime

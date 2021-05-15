@@ -1,0 +1,15 @@
+    <launch>
+        <arg name="swarm_ID" default="0"/>
+        <arg name="fcu_url" default="/dev/ttyUSB1:921600"/>
+        <group ns="uav$(arg swarm_ID)">
+            <!-- MAVROS -->
+            <include file="$(find mavros)/launch/px4.launch">
+                <arg name="fcu_url" value="$(arg fcu_url)"/>
+                <arg name="gcs_url" value=""/>
+            </include>
+        </group>
+        <!-- <include file="$(find vision_to_mavros)/launch/t265_all_nodes.launch">
+                <arg name="swarm_ID" value="$(arg swarm_ID)"/>
+        </include> -->
+
+    </launch>

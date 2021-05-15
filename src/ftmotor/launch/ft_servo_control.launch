@@ -1,0 +1,15 @@
+<launch>
+	<arg name="swarm_ID" default="2"/>
+	<arg name="usb_port_name" default="/dev/ttyUSB0"/>
+
+	<node name="$(anon ft_servo_control)" pkg="ftmotor" type="ft_servo_control" output="screen">
+        <param name="swarm_ID" value="$(arg swarm_ID)"/>
+		<param name="usb_port_name" value="$(arg usb_port_name)"/>
+		<!-- <param name="baud_rate" value="38400"/> -->
+		<param name="baud_rate" value="57600"/>
+		<param name="pos_offset" value="0"/>
+		<param name="ft_servo_rotate_speed" value="100"/>
+		<param name="ft_servo_rotate_duration" value="0.5"/>
+		<param name="pub_rate" value="30"/>
+	</node>
+</launch>

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/zph/ros_ws/ftmotor_ws/src/ftmotor/cmake-build-debug/devel/setup.sh
