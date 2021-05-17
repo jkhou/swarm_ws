@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/camera_detect_generate_messages_eus"
-  "/home/up/catkin_ws/devel/share/roseus/ros/camera_detect/manifest.l"
+  "/home/up/swarm_ws/devel/share/roseus/ros/camera_detect/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

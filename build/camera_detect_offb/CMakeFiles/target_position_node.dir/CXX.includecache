@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/up/catkin_ws/src/camera_detect_offb/src/target_position.cpp
+/home/up/swarm_ws/src/camera_detect_offb/src/target_position.cpp
 ros/ros.h
 -
 geometry_msgs/PoseStamped.h
@@ -68,7 +68,7 @@ fstream
 math.h
 -
 string
-/home/up/catkin_ws/src/camera_detect_offb/src/string
+/home/up/swarm_ws/src/camera_detect_offb/src/string
 time.h
 -
 queue

@@ -67,14 +67,14 @@ set(vision_to_mavros_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(vision_to_mavros_SOURCE_PREFIX /home/up/catkin_ws/src/vision_to_mavros)
-  set(vision_to_mavros_DEVEL_PREFIX /home/up/catkin_ws/devel)
+  set(vision_to_mavros_SOURCE_PREFIX /home/up/swarm_ws/src/vision_to_mavros)
+  set(vision_to_mavros_DEVEL_PREFIX /home/up/swarm_ws/devel)
   set(vision_to_mavros_INSTALL_PREFIX "")
   set(vision_to_mavros_PREFIX ${vision_to_mavros_DEVEL_PREFIX})
 else()
   set(vision_to_mavros_SOURCE_PREFIX "")
   set(vision_to_mavros_DEVEL_PREFIX "")
-  set(vision_to_mavros_INSTALL_PREFIX /home/up/catkin_ws/install)
+  set(vision_to_mavros_INSTALL_PREFIX /home/up/swarm_ws/install)
   set(vision_to_mavros_PREFIX ${vision_to_mavros_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/up/catkin_ws/install/lib;/home/up/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/up/swarm_ws/install/lib;/home/up/swarm_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

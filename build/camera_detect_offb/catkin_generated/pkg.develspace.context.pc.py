@@ -3,6 +3,6 @@ CATKIN_PACKAGE_PREFIX = ""
 PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "message_runtime".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
-PROJECT_NAME = "camera_detect"
-PROJECT_SPACE_DIR = "/home/up/catkin_ws/devel"
+PROJECT_NAME = "camera_detect_offb"
+PROJECT_SPACE_DIR = "/home/up/swarm_ws/devel"
 PROJECT_VERSION = "0.0.0"

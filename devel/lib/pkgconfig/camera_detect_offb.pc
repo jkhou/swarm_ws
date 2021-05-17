@@ -1,0 +1,8 @@
+prefix=/home/up/swarm_ws/devel
+
+Name: camera_detect_offb
+Description: Description of camera_detect_offb
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: message_runtime

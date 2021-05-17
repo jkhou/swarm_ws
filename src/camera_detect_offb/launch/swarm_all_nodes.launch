@@ -1,0 +1,25 @@
+    <launch>
+        <arg name="swarm_ID" default="0"/>
+        <arg name="fcu_url" default="/dev/ttyUSB2:921600"/>
+        <!-- <arg name="uwb_port" default="/dev/ttyUSB3"/> -->
+
+<!--         start mavros and t265 -->
+        <include file="$(find camera_detect_offb)/launch/uwb_t265_mavros.launch">
+                <arg name="swarm_ID" value="$(arg swarm_ID)"/>
+        </include>  
+
+<!--         start camera frame -->
+        <node pkg="camera_detect_offb" type="camera_test_node" name="camera_test_node" output="screen" >
+        </node>
+
+<!--         target position calculate node -->
+        <node pkg="camera_detect_offb" type="target_position_node" name="target_position_node" output="screen" >
+                <remap from="drone_pos_vision" to="/uav$(arg swarm_ID)/drone_pos_vision" />
+                <remap from="target_pose_world" to="/uav$(arg swarm_ID)/target_pose_world" />
+        </node>
+
+<!--         target position calculate node -->
+        <!-- <node pkg="camera_detect_offb" type="object_detection_uav1.py" name="object_detection_uav1" output="screen" >
+        </node> -->
+
+    </launch>

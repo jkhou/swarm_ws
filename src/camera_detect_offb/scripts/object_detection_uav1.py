@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding=UTF-8
 """
  Copyright (C) 2018-2019 Intel Corporation
 
@@ -33,7 +34,7 @@ import cv2
 sys.path.append('/opt/ros/melodic/lib/python2.7/dist-packages')
 
 import threading
-from openvino.inference_engine import IENetwork, IECore
+from openvino.inference_engine import IENetwork, IECore 
 
 from geometry_msgs.msg import PoseStamped
 
@@ -365,18 +366,14 @@ def calculate(data):
 
 def main():
     global args
-    # args = build_argparser().parse_args()
-
-    # model_xml = args.model
-    # model_bin = os.path.splitext(model_xml)[0] + ".bin"
 
     parser = ArgumentParser(add_help=False)
     args = parser.add_argument_group('Options')
     args.cpu_extension = False
-    args.model = '/home/up/catkin_ws/src/camera_detect_offb/model/frozen_darknet_yolov3_model.xml'
-    args.bin = '/home/up/catkin_ws/src/camera_detect_offb/model/frozen_darknet_yolov3_model.bin'
+    args.model = '/home/up/swarm_ws/src/camera_detect_offb/model/frozen_darknet_yolov3_model.xml'
+    args.bin = '/home/up/swarm_ws/src/camera_detect_offb/model/frozen_darknet_yolov3_model.bin'
     args.device = 'MYRIAD'
-    args.labels = '/home/up/catkin_ws/src/camera_detect_offb/model/frozen_darknet_yolov3_model.mapping'
+    args.labels = '/home/up/swarm_ws/src/camera_detect_offb/model/frozen_darknet_yolov3_model.mapping'
     args.input = 'cam'
     args.prob_threshold = 0.3
     args.iou_threshold = 0.3
@@ -401,9 +398,9 @@ def main():
         not_supported_layers = [l for l in net.layers.keys() if l not in supported_layers]
         if len(not_supported_layers) != 0:
             log.error("Following layers are not supported by the plugin for specified device {}:\n {}".
-                      format(args.device, ', '.join(not_supported_layers)))
+                        format(args.device, ', '.join(not_supported_layers)))
             log.error("Please try to specify cpu extensions library path in sample's command line parameters using -l "
-                      "or --cpu_extension command line argument")
+                        "or --cpu_extension command line argument")
             sys.exit(1)
 
     assert len(net.inputs.keys()) == 1, "Sample supports only YOLO V3 based single input topologies"

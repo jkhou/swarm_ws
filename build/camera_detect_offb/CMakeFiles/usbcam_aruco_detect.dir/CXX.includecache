@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/up/catkin_ws/src/camera_detect_offb/src/usbcam_aruco_detect.cpp
+/home/up/swarm_ws/src/camera_detect_offb/src/usbcam_aruco_detect.cpp
 opencv2/opencv.hpp
 -
 iostream

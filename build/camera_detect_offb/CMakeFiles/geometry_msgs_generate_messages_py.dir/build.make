@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/up/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/up/swarm_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/up/catkin_ws/build
+CMAKE_BINARY_DIR = /home/up/swarm_ws/build
 
 # Utility rule file for geometry_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/build: geom
 .PHONY : camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 
 camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
-	cd /home/up/catkin_ws/build/camera_detect_offb && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/up/swarm_ws/build/camera_detect_offb && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 
 camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend:
-	cd /home/up/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/up/catkin_ws/src /home/up/catkin_ws/src/camera_detect_offb /home/up/catkin_ws/build /home/up/catkin_ws/build/camera_detect_offb /home/up/catkin_ws/build/camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/up/swarm_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/up/swarm_ws/src /home/up/swarm_ws/src/camera_detect_offb /home/up/swarm_ws/build /home/up/swarm_ws/build/camera_detect_offb /home/up/swarm_ws/build/camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
 

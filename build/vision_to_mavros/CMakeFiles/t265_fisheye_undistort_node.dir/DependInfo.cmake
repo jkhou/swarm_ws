@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/up/catkin_ws/src/vision_to_mavros/src/t265_fisheye_undistort.cpp" "/home/up/catkin_ws/build/vision_to_mavros/CMakeFiles/t265_fisheye_undistort_node.dir/src/t265_fisheye_undistort.cpp.o"
+  "/home/up/swarm_ws/src/vision_to_mavros/src/t265_fisheye_undistort.cpp" "/home/up/swarm_ws/build/vision_to_mavros/CMakeFiles/t265_fisheye_undistort_node.dir/src/t265_fisheye_undistort.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -20,6 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/opencv"
+  "/opt/intel/openvino_2020.4.287/opencv/include"
   )
 
 # Targets to which this target links.

@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=c++11 -g -O3 -ftree-vectorize -march=native
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"ftmotor\"
 
-CXX_INCLUDES = -I/home/up/catkin_ws/src/ftmotor/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/up/swarm_ws/src/ftmotor/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

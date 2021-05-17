@@ -1,2 +1,2 @@
 camera_detect_offb:ftmotor:vision_to_mavros
--DCATKIN_DEVEL_PREFIX=/home/up/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/up/catkin_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/up/swarm_ws/devel -DCMAKE_INSTALL_PREFIX=/home/up/swarm_ws/install -G Unix Makefiles

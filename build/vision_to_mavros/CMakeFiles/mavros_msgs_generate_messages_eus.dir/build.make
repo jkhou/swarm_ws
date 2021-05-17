@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/up/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/up/swarm_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/up/catkin_ws/build
+CMAKE_BINARY_DIR = /home/up/swarm_ws/build
 
 # Utility rule file for mavros_msgs_generate_messages_eus.
 
@@ -63,10 +63,10 @@ vision_to_mavros/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build: mavros_
 .PHONY : vision_to_mavros/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 
 vision_to_mavros/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean:
-	cd /home/up/catkin_ws/build/vision_to_mavros && $(CMAKE_COMMAND) -P CMakeFiles/mavros_msgs_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/up/swarm_ws/build/vision_to_mavros && $(CMAKE_COMMAND) -P CMakeFiles/mavros_msgs_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : vision_to_mavros/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean
 
 vision_to_mavros/CMakeFiles/mavros_msgs_generate_messages_eus.dir/depend:
-	cd /home/up/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/up/catkin_ws/src /home/up/catkin_ws/src/vision_to_mavros /home/up/catkin_ws/build /home/up/catkin_ws/build/vision_to_mavros /home/up/catkin_ws/build/vision_to_mavros/CMakeFiles/mavros_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/up/swarm_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/up/swarm_ws/src /home/up/swarm_ws/src/vision_to_mavros /home/up/swarm_ws/build /home/up/swarm_ws/build/vision_to_mavros /home/up/swarm_ws/build/vision_to_mavros/CMakeFiles/mavros_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vision_to_mavros/CMakeFiles/mavros_msgs_generate_messages_eus.dir/depend
 

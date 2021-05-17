@@ -1,4 +1,4 @@
-prefix=/home/up/catkin_ws/install
+prefix=/home/up/swarm_ws/install
 
 Name: ftmotor
 Description: Description of ftmotor

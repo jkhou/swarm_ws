@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/up/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/up/swarm_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/up/catkin_ws/build
+CMAKE_BINARY_DIR = /home/up/swarm_ws/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/up/catkin_ws/build/CMakeFiles /home/up/catkin_ws/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/up/swarm_ws/build/CMakeFiles /home/up/swarm_ws/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/up/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/up/swarm_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -532,82 +532,82 @@ usbcam_aruco_detect/fast:
 .PHONY : usbcam_aruco_detect/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_gennodejs
+# Target rules for targets named camera_detect_offb_generate_messages_py
 
 # Build rule for target.
-camera_detect_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_gennodejs
-.PHONY : camera_detect_gennodejs
+camera_detect_offb_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_generate_messages_py
+.PHONY : camera_detect_offb_generate_messages_py
 
 # fast build rule for target.
-camera_detect_gennodejs/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_gennodejs.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_gennodejs.dir/build
-.PHONY : camera_detect_gennodejs/fast
+camera_detect_offb_generate_messages_py/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_py.dir/build
+.PHONY : camera_detect_offb_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_generate_messages_nodejs
+# Target rules for targets named camera_detect_offb_generate_messages_nodejs
 
 # Build rule for target.
-camera_detect_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_generate_messages_nodejs
-.PHONY : camera_detect_generate_messages_nodejs
+camera_detect_offb_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_generate_messages_nodejs
+.PHONY : camera_detect_offb_generate_messages_nodejs
 
 # fast build rule for target.
-camera_detect_generate_messages_nodejs/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_generate_messages_nodejs.dir/build
-.PHONY : camera_detect_generate_messages_nodejs/fast
+camera_detect_offb_generate_messages_nodejs/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_nodejs.dir/build
+.PHONY : camera_detect_offb_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_generate_messages_lisp
+# Target rules for targets named camera_detect_offb_generate_messages_lisp
 
 # Build rule for target.
-camera_detect_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_generate_messages_lisp
-.PHONY : camera_detect_generate_messages_lisp
+camera_detect_offb_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_generate_messages_lisp
+.PHONY : camera_detect_offb_generate_messages_lisp
 
 # fast build rule for target.
-camera_detect_generate_messages_lisp/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_generate_messages_lisp.dir/build
-.PHONY : camera_detect_generate_messages_lisp/fast
+camera_detect_offb_generate_messages_lisp/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/build
+.PHONY : camera_detect_offb_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_geneus
+# Target rules for targets named camera_detect_offb_geneus
 
 # Build rule for target.
-camera_detect_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_geneus
-.PHONY : camera_detect_geneus
+camera_detect_offb_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_geneus
+.PHONY : camera_detect_offb_geneus
 
 # fast build rule for target.
-camera_detect_geneus/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_geneus.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_geneus.dir/build
-.PHONY : camera_detect_geneus/fast
+camera_detect_offb_geneus/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/build
+.PHONY : camera_detect_offb_geneus/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_genlisp
+# Target rules for targets named camera_detect_offb_generate_messages_eus
 
 # Build rule for target.
-camera_detect_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_genlisp
-.PHONY : camera_detect_genlisp
+camera_detect_offb_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_generate_messages_eus
+.PHONY : camera_detect_offb_generate_messages_eus
 
 # fast build rule for target.
-camera_detect_genlisp/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_genlisp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_genlisp.dir/build
-.PHONY : camera_detect_genlisp/fast
+camera_detect_offb_generate_messages_eus/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/build
+.PHONY : camera_detect_offb_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_gencpp
+# Target rules for targets named camera_detect_offb_generate_messages_cpp
 
 # Build rule for target.
-camera_detect_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_gencpp
-.PHONY : camera_detect_gencpp
+camera_detect_offb_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_generate_messages_cpp
+.PHONY : camera_detect_offb_generate_messages_cpp
 
 # fast build rule for target.
-camera_detect_gencpp/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_gencpp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_gencpp.dir/build
-.PHONY : camera_detect_gencpp/fast
+camera_detect_offb_generate_messages_cpp/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/build
+.PHONY : camera_detect_offb_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_lisp
@@ -621,6 +621,19 @@ sensor_msgs_generate_messages_lisp: cmake_check_build_system
 sensor_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named camera_detect_offb_gencpp
+
+# Build rule for target.
+camera_detect_offb_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_gencpp
+.PHONY : camera_detect_offb_gencpp
+
+# fast build rule for target.
+camera_detect_offb_gencpp/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/build
+.PHONY : camera_detect_offb_gencpp/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_eus
@@ -675,17 +688,17 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_generate_messages_cpp
+# Target rules for targets named camera_test_node
 
 # Build rule for target.
-camera_detect_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_generate_messages_cpp
-.PHONY : camera_detect_generate_messages_cpp
+camera_test_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_test_node
+.PHONY : camera_test_node
 
 # fast build rule for target.
-camera_detect_generate_messages_cpp/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_generate_messages_cpp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_generate_messages_cpp.dir/build
-.PHONY : camera_detect_generate_messages_cpp/fast
+camera_test_node/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_test_node.dir/build.make camera_detect_offb/CMakeFiles/camera_test_node.dir/build
+.PHONY : camera_test_node/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
@@ -844,19 +857,6 @@ tf_generate_messages_py/fast:
 .PHONY : tf_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_generate_messages_py
-
-# Build rule for target.
-camera_detect_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_generate_messages_py
-.PHONY : camera_detect_generate_messages_py
-
-# fast build rule for target.
-camera_detect_generate_messages_py/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_generate_messages_py.dir/build
-.PHONY : camera_detect_generate_messages_py/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -868,19 +868,6 @@ actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
 actionlib_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named camera_detect_genpy
-
-# Build rule for target.
-camera_detect_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_genpy
-.PHONY : camera_detect_genpy
-
-# fast build rule for target.
-camera_detect_genpy/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_genpy.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_genpy.dir/build
-.PHONY : camera_detect_genpy/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_generate_messages_cpp
@@ -935,19 +922,6 @@ tf_generate_messages_nodejs/fast:
 .PHONY : tf_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_generate_messages
-
-# Build rule for target.
-camera_detect_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_generate_messages
-.PHONY : camera_detect_generate_messages
-
-# fast build rule for target.
-camera_detect_generate_messages/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_generate_messages.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_generate_messages.dir/build
-.PHONY : camera_detect_generate_messages/fast
-
-#=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -961,19 +935,6 @@ tf2_msgs_generate_messages_nodejs/fast:
 .PHONY : tf2_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_generate_messages_lisp
-
-# Build rule for target.
-actionlib_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_lisp
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_generate_messages_nodejs
 
 # Build rule for target.
@@ -985,6 +946,19 @@ actionlib_generate_messages_nodejs: cmake_check_build_system
 actionlib_generate_messages_nodejs/fast:
 	$(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
 .PHONY : actionlib_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named camera_detect_offb_gennodejs
+
+# Build rule for target.
+camera_detect_offb_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_gennodejs
+.PHONY : camera_detect_offb_gennodejs
+
+# fast build rule for target.
+camera_detect_offb_gennodejs/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/build
+.PHONY : camera_detect_offb_gennodejs/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_generate_messages_py
@@ -1039,19 +1013,6 @@ actionlib_msgs_generate_messages_lisp/fast:
 .PHONY : actionlib_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named camera_detect_generate_messages_eus
-
-# Build rule for target.
-camera_detect_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_generate_messages_eus
-.PHONY : camera_detect_generate_messages_eus
-
-# fast build rule for target.
-camera_detect_generate_messages_eus/fast:
-	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_generate_messages_eus.dir/build
-.PHONY : camera_detect_generate_messages_eus/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1078,6 +1039,32 @@ tf2_msgs_generate_messages_cpp/fast:
 .PHONY : tf2_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named actionlib_generate_messages_lisp
+
+# Build rule for target.
+actionlib_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_lisp
+.PHONY : actionlib_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_generate_messages_lisp/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named camera_detect_offb_generate_messages
+
+# Build rule for target.
+camera_detect_offb_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_generate_messages
+.PHONY : camera_detect_offb_generate_messages
+
+# fast build rule for target.
+camera_detect_offb_generate_messages/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages.dir/build
+.PHONY : camera_detect_offb_generate_messages/fast
+
+#=============================================================================
 # Target rules for targets named consensus_offb
 
 # Build rule for target.
@@ -1089,6 +1076,32 @@ consensus_offb: cmake_check_build_system
 consensus_offb/fast:
 	$(MAKE) -f camera_detect_offb/CMakeFiles/consensus_offb.dir/build.make camera_detect_offb/CMakeFiles/consensus_offb.dir/build
 .PHONY : consensus_offb/fast
+
+#=============================================================================
+# Target rules for targets named camera_detect_offb_genpy
+
+# Build rule for target.
+camera_detect_offb_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_genpy
+.PHONY : camera_detect_offb_genpy
+
+# fast build rule for target.
+camera_detect_offb_genpy/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_genpy.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_genpy.dir/build
+.PHONY : camera_detect_offb_genpy/fast
+
+#=============================================================================
+# Target rules for targets named camera_detect_offb_genlisp
+
+# Build rule for target.
+camera_detect_offb_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb_genlisp
+.PHONY : camera_detect_offb_genlisp
+
+# fast build rule for target.
+camera_detect_offb_genlisp/fast:
+	$(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_genlisp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_genlisp.dir/build
+.PHONY : camera_detect_offb_genlisp/fast
 
 #=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_py
@@ -1404,18 +1417,19 @@ help:
 	@echo "... target_position_node"
 	@echo "... path_follow_offb"
 	@echo "... usbcam_aruco_detect"
-	@echo "... camera_detect_gennodejs"
-	@echo "... camera_detect_generate_messages_nodejs"
-	@echo "... camera_detect_generate_messages_lisp"
-	@echo "... camera_detect_geneus"
-	@echo "... camera_detect_genlisp"
-	@echo "... camera_detect_gencpp"
+	@echo "... camera_detect_offb_generate_messages_py"
+	@echo "... camera_detect_offb_generate_messages_nodejs"
+	@echo "... camera_detect_offb_generate_messages_lisp"
+	@echo "... camera_detect_offb_geneus"
+	@echo "... camera_detect_offb_generate_messages_eus"
+	@echo "... camera_detect_offb_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... camera_detect_offb_gencpp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... camera_detect_generate_messages_cpp"
+	@echo "... camera_test_node"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_eus"
@@ -1428,25 +1442,25 @@ help:
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... tf_generate_messages_py"
-	@echo "... camera_detect_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... camera_detect_genpy"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_eus"
 	@echo "... tf_generate_messages_nodejs"
-	@echo "... camera_detect_generate_messages"
 	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... camera_detect_offb_gennodejs"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... camera_detect_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_lisp"
+	@echo "... camera_detect_offb_generate_messages"
 	@echo "... consensus_offb"
+	@echo "... camera_detect_offb_genpy"
+	@echo "... camera_detect_offb_genlisp"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_cpp"

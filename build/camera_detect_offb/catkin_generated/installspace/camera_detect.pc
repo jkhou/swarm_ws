@@ -1,4 +1,4 @@
-prefix=/home/up/catkin_ws/install
+prefix=/home/up/swarm_ws/install
 
 Name: camera_detect
 Description: Description of camera_detect

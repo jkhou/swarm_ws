@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/up/catkin_ws/src/ftmotor/src/ft_servo_control.cpp" "/home/up/catkin_ws/build/ftmotor/CMakeFiles/ft_servo_control.dir/src/ft_servo_control.cpp.o"
+  "/home/up/swarm_ws/src/ftmotor/src/ft_servo_control.cpp" "/home/up/swarm_ws/build/ftmotor/CMakeFiles/ft_servo_control.dir/src/ft_servo_control.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/up/catkin_ws/src/ftmotor/include"
+  "/home/up/swarm_ws/src/ftmotor/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

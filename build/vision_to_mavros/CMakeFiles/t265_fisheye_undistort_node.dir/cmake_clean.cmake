@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/t265_fisheye_undistort_node.dir/src/t265_fisheye_undistort.cpp.o"
-  "/home/up/catkin_ws/devel/lib/vision_to_mavros/t265_fisheye_undistort_node.pdb"
-  "/home/up/catkin_ws/devel/lib/vision_to_mavros/t265_fisheye_undistort_node"
+  "/home/up/swarm_ws/devel/lib/vision_to_mavros/t265_fisheye_undistort_node.pdb"
+  "/home/up/swarm_ws/devel/lib/vision_to_mavros/t265_fisheye_undistort_node"
 )
 
 # Per-language clean rules from dependency scanning.

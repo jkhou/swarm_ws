@@ -6,6 +6,7 @@
 #include <message_filters/sync_policies/approximate_time.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/calib3d/calib3d_c.h>
 
 using namespace cv;
 using namespace std;

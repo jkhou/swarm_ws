@@ -1,8 +1,8 @@
-# Install script for directory: /home/up/catkin_ws/src/ftmotor
+# Install script for directory: /home/up/swarm_ws/src/ftmotor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/up/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/up/swarm_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/up/catkin_ws/build/ftmotor/catkin_generated/installspace/ftmotor.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/up/swarm_ws/build/ftmotor/catkin_generated/installspace/ftmotor.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ftmotor/cmake" TYPE FILE FILES
-    "/home/up/catkin_ws/build/ftmotor/catkin_generated/installspace/ftmotorConfig.cmake"
-    "/home/up/catkin_ws/build/ftmotor/catkin_generated/installspace/ftmotorConfig-version.cmake"
+    "/home/up/swarm_ws/build/ftmotor/catkin_generated/installspace/ftmotorConfig.cmake"
+    "/home/up/swarm_ws/build/ftmotor/catkin_generated/installspace/ftmotorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ftmotor" TYPE FILE FILES "/home/up/catkin_ws/src/ftmotor/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ftmotor" TYPE FILE FILES "/home/up/swarm_ws/src/ftmotor/package.xml")
 endif()
 

@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/up/catkin_ws/devel/setup.sh
+    local-name: /home/up/swarm_ws/devel/setup.sh

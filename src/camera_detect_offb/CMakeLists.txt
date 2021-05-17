@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(camera_detect)
+project(camera_detect_offb)
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 add_definitions(-std=c++11 -g -O1 -ftree-vectorize -march=native)
@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
     std_msgs
     geometry_msgs
     visualization_msgs
+    rospy
 )
 
 
@@ -51,6 +52,9 @@ add_definitions(${EIGEN_DEFINITIONS})
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
+add_executable(camera_test_node src/camera_test.cpp)
+add_dependencies(camera_test_node        ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
+target_link_libraries(camera_test_node ${OpenCV_LIBS} ${catkin_LIBRARIES} )
 
 add_executable(usbcam_aruco_detect src/usbcam_aruco_detect.cpp)
 add_dependencies(usbcam_aruco_detect    ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )

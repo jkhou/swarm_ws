@@ -1,8 +1,8 @@
-# Install script for directory: /home/up/catkin_ws/src/camera_detect_offb
+# Install script for directory: /home/up/swarm_ws/src/camera_detect_offb
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/up/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/up/swarm_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,49 +38,37 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_detect/cmake" TYPE FILE FILES "/home/up/catkin_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detect-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_detect_offb/cmake" TYPE FILE FILES "/home/up/swarm_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detect_offb-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/up/catkin_ws/devel/include/camera_detect")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/up/swarm_ws/devel/share/roseus/ros/camera_detect_offb")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/up/catkin_ws/devel/share/roseus/ros/camera_detect")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/up/swarm_ws/devel/lib/python2.7/dist-packages/camera_detect_offb")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/up/catkin_ws/devel/share/common-lisp/ros/camera_detect")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/up/swarm_ws/devel/lib/python2.7/dist-packages/camera_detect_offb")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/up/catkin_ws/devel/share/gennodejs/ros/camera_detect")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/up/swarm_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detect_offb.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/up/catkin_ws/devel/lib/python2.7/dist-packages/camera_detect")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_detect_offb/cmake" TYPE FILE FILES "/home/up/swarm_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detect_offb-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/up/catkin_ws/devel/lib/python2.7/dist-packages/camera_detect")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/up/catkin_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detect.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_detect/cmake" TYPE FILE FILES "/home/up/catkin_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detect-msg-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_detect/cmake" TYPE FILE FILES
-    "/home/up/catkin_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detectConfig.cmake"
-    "/home/up/catkin_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detectConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_detect_offb/cmake" TYPE FILE FILES
+    "/home/up/swarm_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detect_offbConfig.cmake"
+    "/home/up/swarm_ws/build/camera_detect_offb/catkin_generated/installspace/camera_detect_offbConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_detect" TYPE FILE FILES "/home/up/catkin_ws/src/camera_detect_offb/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_detect_offb" TYPE FILE FILES "/home/up/swarm_ws/src/camera_detect_offb/package.xml")
 endif()
 
