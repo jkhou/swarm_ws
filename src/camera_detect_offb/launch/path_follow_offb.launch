@@ -1,6 +1,6 @@
 <launch>
 	<arg name="swarm_ID" default="2"/>
-	<node name="$(anon path_follow_offb)" pkg="camera_detect" type="path_follow_offb" output="screen">
+	<node name="$(anon path_follow_offb)" pkg="camera_detect_offb" type="path_follow_offb" output="screen">
 		<param name="ctrl_rate" value="30"/>
 		<param name="swarm_ID" value="$(arg swarm_ID)"/>
         <param name="traj_csv_name" value="/cfg/path_circle.csv"/>

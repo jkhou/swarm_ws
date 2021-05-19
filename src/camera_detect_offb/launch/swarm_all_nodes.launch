@@ -18,6 +18,12 @@
                 <remap from="target_pose_world" to="/uav$(arg swarm_ID)/target_pose_world" />
         </node>
 
+<!--         path follow offboard -->
+        <include file="$(find camera_detect_offb)/launch/path_follow_offb.launch">
+                <arg name="swarm_ID" value="$(arg swarm_ID)"/>
+        </include>  
+
+
 <!--         target position calculate node -->
         <!-- <node pkg="camera_detect_offb" type="object_detection_uav1.py" name="object_detection_uav1" output="screen" >
         </node> -->

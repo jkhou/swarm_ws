@@ -99,7 +99,7 @@ int main (int argc, char** argv) {
     ros::NodeHandle nh;
     // load param
     loadRosParams(nh);
-    std::string pkg_path = ros::package::getPath("camera_detect");
+    std::string pkg_path = ros::package::getPath("camera_detect_offb");
     std::vector<std::vector<double>> csv_traj = read_csv_traj(pkg_path + traj_csv_name);
     //ros pub and sub
     ros::Subscriber uav_state_sub = nh.subscribe<mavros_msgs::State>

@@ -49,11 +49,11 @@ def callback(data):
     ## cv2默认图像为BGR，但是其他为RGB，进行颜色空间转换
     # frame = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     frame = img
-    print("Callback Process!")
+    # print("Callback Process!")
     ## 计算回调一次的时间
     time1 = time()
     calculate(frame)
-    print("Callback Time: ",time()-time1)
+    # print("Callback Time: ",time()-time1)
     cv2.waitKey(1)
 
 
@@ -61,7 +61,7 @@ def showImage():
     ## 从话题中读取图像信息，并进行回调
     rospy.init_node('Image_subscriber', anonymous = True)
     rospy.Subscriber('/camera/image', Image, callback, queue_size = 1, buff_size=524288000)
-    print("Subscribe Image Process!")
+    # print("Subscribe Image Process!")
     rospy.spin()
 
 
@@ -361,7 +361,7 @@ def calculate(data):
         log.info("Switched to {} mode".format("async" if is_async_mode else "sync"))
         
     end_time_while = time() - start_time_while
-    print("time_while =", end_time_while)
+    # print("time_while =", end_time_while)
 
 
 def main():

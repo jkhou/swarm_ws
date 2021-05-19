@@ -45,6 +45,7 @@
 #include<sstream>
 
 #include<librealsense2/rs.hpp>
+#include <csignal>
 
 using namespace std;
 
@@ -114,6 +115,23 @@ geometry_msgs::Quaternion euler2quaternion(float roll, float pitch, float yaw);
 Eigen::Quaterniond euler2quaternion_eigen(float roll, float pitch, float yaw);
 geometry_msgs::Vector3 quaternion2euler(float x, float y, float z, float w);
 
+// watchsignal flag
+bool flag = true;
+
+void shutdown_handler(int)
+{
+    cout<<"shutdown"<<endl;
+    flag = false;
+} 
+
+// capture the signal from keyboard
+void watchSignal() {
+    signal(SIGINT, shutdown_handler);
+    signal(SIGTERM, shutdown_handler);
+    signal(SIGKILL, shutdown_handler);
+    signal(SIGQUIT, shutdown_handler);
+}
+
 
 //main function
 int main(int argc, char **argv) {
@@ -154,7 +172,10 @@ int main(int argc, char **argv) {
     }
 
 
-    while(ros::ok()){
+    while(ros::ok() && flag){
+        // check if there is signal input from the keyboard
+        watchSignal();
+
          ros::spinOnce();//执行一次回调
          if(!targetDetectFlag){
              //修改标志位
@@ -179,9 +200,9 @@ int main(int argc, char **argv) {
 
                //坐标转换，乘TF矩阵得到物体相对飞机的实际坐标点target_position_of_drone
                target_position_of_drone = tf_camera_to_drone * (tf_image_to_enu * target_position_of_img);
-               cout << "target_position_of_drone-x = " << target_position_of_drone.x() << endl;
-                cout << "target_position_of_drone-y = " << target_position_of_drone.y() << endl;
-               cout << "target_position_of_drone-z = " << target_position_of_drone.z() << endl;
+            //    cout << "target_position_of_drone-x = " << target_position_of_drone.x() << endl;
+                // cout << "target_position_of_drone-y = " << target_position_of_drone.y() << endl;
+            //    cout << "target_position_of_drone-z = " << target_position_of_drone.z() << endl;
 
                //坐标转换，乘TF矩阵得到物体相对飞机的实际坐标点target_position_of_drone ^^^
 
@@ -210,11 +231,11 @@ int main(int argc, char **argv) {
                //飞机姿态转换为euler角^^^
 
                //减去初始euler角
-               cout << "euler-z real-time = " << drone_euler.z << endl;
-               cout << "init ------z =" << drone_euler_init.z << endl;
+            //    cout << "euler-z real-time = " << drone_euler.z << endl;
+            //    cout << "init ------z =" << drone_euler_init.z << endl;
                drone_euler.z  = drone_euler.z - drone_euler_init.z;
                
-               cout << "euler-z final = " << drone_euler.z << endl;
+            //    cout << "euler-z final = " << drone_euler.z << endl;
                //减去初始euler角^^^
 
                //减去初始后转换为四元数
@@ -229,7 +250,7 @@ int main(int argc, char **argv) {
 
                //计算不受影响的距离
                target_position_of_world = tf_drone_to_world * target_position_of_drone;
-               cout <<  target_position_of_drone.x();
+            //    cout <<  target_position_of_drone.x();
 
                drone_pos_vision.x() = target_position_of_world.x();
                drone_pos_vision.y() = target_position_of_world.y();
@@ -274,9 +295,9 @@ int main(int argc, char **argv) {
                msg_drone_pos_vision.pose.orientation.w = -1000;
         }
         msg_target_pose_from_img_pub.publish(msg_target_pose_from_img);
-    cout<<"x is :"<<msg_drone_pos_vision.pose.position.x<<"    "<<"y is :"<<msg_drone_pos_vision.pose.position.y<<"     "<<"z is :"<<msg_drone_pos_vision.pose.position.z<<endl;
-    cout<<"id is :"<<msg_drone_pos_vision.pose.orientation.x<<endl;
-    cout<<"标志位是:"<<msg_drone_pos_vision.pose.orientation.w<<endl;
+    // cout<<"x is :"<<msg_drone_pos_vision.pose.position.x<<"    "<<"y is :"<<msg_drone_pos_vision.pose.position.y<<"     "<<"z is :"<<msg_drone_pos_vision.pose.position.z<<endl;
+    // cout<<"id is :"<<msg_drone_pos_vision.pose.orientation.x<<endl;
+    // cout<<"标志位是:"<<msg_drone_pos_vision.pose.orientation.w<<endl;
 	drone_pos_vision_pub.publish(msg_drone_pos_vision);     
     target_pose_world_pub.publish(msg_target_pose_world);   
         rate.sleep();
@@ -289,7 +310,7 @@ void plane_attitude_sub(const geometry_msgs::PoseStamped::ConstPtr& msg)
     plane_atti_msg = *msg;
     // cout << "msg->pose.orientation.z: " << msg->pose.orientation.z << endl;
     drone_euler_real = quaternion2euler(plane_atti_msg.pose.orientation.x,plane_atti_msg.pose.orientation.y,plane_atti_msg.pose.orientation.z,plane_atti_msg.pose.orientation.w);
-    cout  <<  "drone_euler_real z  =" << drone_euler_real.z << endl; 
+    // cout  <<  "drone_euler_real z  =" << drone_euler_real.z << endl; 
     pose_queue.push(*msg);
 }
 
