@@ -11,6 +11,7 @@
 #include <geometry_msgs/TwistStamped.h>
 #include <string>
 #include <ros/package.h>
+#include <csignal>
 using namespace std;
 
 // global variable
@@ -27,6 +28,23 @@ int ctrl_rate = 30;
 int aruco_num = 0;
 string traj_csv_name = "/cfg/path_circle.csv";
 bool repeat_path = false;
+
+// watchsignal flag
+bool flag = true;
+
+void shutdown_handler(int)
+{
+    cout<<"shutdown"<<endl;
+    flag = false;
+} 
+
+// capture the signal from keyboard
+void watchSignal() {
+    signal(SIGINT, shutdown_handler);
+    signal(SIGTERM, shutdown_handler);
+    signal(SIGKILL, shutdown_handler);
+    signal(SIGQUIT, shutdown_handler);
+}
 
 // tool func
 template<typename T>
@@ -142,7 +160,8 @@ int main (int argc, char** argv) {
     int traj_index = 0;
 
     //main ctrl loop
-    while(ros::ok()) {
+    while(ros::ok() && flag) {
+        watchSignal();
         if (uav_cur_state.armed) {
             if (uav_cur_state.mode == "OFFBOARD") {
                 double off_board_start = ros::Time::now().toSec();

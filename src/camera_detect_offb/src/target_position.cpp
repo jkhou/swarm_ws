@@ -149,7 +149,7 @@ int main(int argc, char **argv) {
     // 物体相对相机的位置
     ros::Publisher msg_target_pose_from_img_pub = nh.advertise<geometry_msgs::PoseStamped>("topic_target_pose_from_img",1);
     // 物体相对飞机的最终位置
-    ros::Publisher drone_pos_vision_pub = nh.advertise<geometry_msgs::PoseStamped>("drone_pos_vision",1);
+    ros::Publisher drone_pos_vision_pub = nh.advertise<geometry_msgs::PoseStamped>("target_pose_drone",1);
     // target pose to the world
     ros::Publisher target_pose_world_pub = nh.advertise<geometry_msgs::PoseStamped>("target_pose_world",1);
 
