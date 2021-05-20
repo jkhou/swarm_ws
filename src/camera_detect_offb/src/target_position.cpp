@@ -75,8 +75,9 @@ geometry_msgs::PoseStamped msg_target_pose_from_img;
 geometry_msgs::PoseStamped msg_target_pose_world;
 bool got_attitude_init = false;
 
+int swarm_ID = 0;
 geometry_msgs::Vector3 drone_euler_real;
-
+std::string uav_name = "/uav"+to_string(swarm_ID);
 
 //param
 //uav01
@@ -132,20 +133,41 @@ void watchSignal() {
     signal(SIGQUIT, shutdown_handler);
 }
 
+// tool func
+template<typename T>
+void readParam(ros::NodeHandle &nh, std::string param_name, T& loaded_param) {
+    // template to read param from roslaunch
+    const string& node_name = ros::this_node::getName();
+    param_name = node_name + "/" + param_name;
+    if (!nh.getParam(param_name, loaded_param)) {
+        ROS_ERROR_STREAM("Failed to load " << param_name << ", use default value");
+        //TODO:print default value
+    }
+    else{
+        ROS_INFO_STREAM("Load " << param_name << " success");
+        //TODO:print loaded value
+    }
+}
+
+void loadRosParams(ros::NodeHandle &nh) {
+    readParam<int>(nh, "swarm_ID", swarm_ID);
+    uav_name = "/uav" + to_string(swarm_ID);
+}
 
 //main function
 int main(int argc, char **argv) {
 
-    ros::init(argc, argv, "pnp_target_node");
+    ros::init(argc, argv, "pnp_target_node",ros::init_options::AnonymousName);
     ros::NodeHandle nh;
     ros::Rate rate(30);
+    loadRosParams(nh);
 
     // 订阅飞机姿态,并存放到quene里
-    ros::Subscriber plane_attitude = nh.subscribe<geometry_msgs::PoseStamped>("/uav2/mavros/local_position/pose",1,plane_attitude_sub);
+    ros::Subscriber plane_attitude = nh.subscribe<geometry_msgs::PoseStamped>(uav_name + "/mavros/local_position/pose",1,plane_attitude_sub);
     // 订阅识别目标,如果有将targetDetectFlag置为1，并且根据内参换算出物体相对相机的实际位置
     ros::Subscriber target_corner = nh.subscribe<geometry_msgs::PoseStamped>("yolo_target_corner",1,target_corner_sub);
     // vision_pose
-    ros::Subscriber vision_pose = nh.subscribe<geometry_msgs::PoseStamped>("/uav2/mavros/vision_pose/pose",1,vision_pose_sub);
+    ros::Subscriber vision_pose = nh.subscribe<geometry_msgs::PoseStamped>(uav_name + "/mavros/vision_pose/pose",1,vision_pose_sub);
     // 物体相对相机的位置
     ros::Publisher msg_target_pose_from_img_pub = nh.advertise<geometry_msgs::PoseStamped>("topic_target_pose_from_img",1);
     // 物体相对飞机的最终位置

@@ -14,6 +14,8 @@
 
 <!--         target position calculate node -->
         <node pkg="camera_detect_offb" type="target_position_node" name="target_position_node" output="screen" >
+                <!-- <arg name="swarm_ID" value="$(arg swarm_ID)"/> -->
+                <param name="swarm_ID" value="$(arg swarm_ID)"/>
                 <remap from="target_pose_drone" to="/uav$(arg swarm_ID)/target_pose_drone" />
                 <remap from="target_pose_world" to="/uav$(arg swarm_ID)/target_pose_world" />
         </node>

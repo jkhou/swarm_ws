@@ -185,7 +185,7 @@ int main (int argc, char** argv) {
                 }
                 if(just_offb){
                     //into offboard mode just now, stay still for a while, about several seconds
-                    for(int i = 10000; ros::ok() && i > 0; --i){
+                    for(int i = 1000000; ros::ok() && i > 0; --i){
                         offb_setpoint_pub.publish(pose_before_offb);
                         double off_board_exce = ros::Time::now().toSec();
                         if(off_board_exce >= off_board_start)
