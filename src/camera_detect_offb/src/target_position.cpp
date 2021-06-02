@@ -291,7 +291,6 @@ int main(int argc, char **argv) {
                //drone_pos_vision.x() = drone_pos_vision.y() + synchronized_att.pose.position.y;
                //drone_pos_vision.z() = drone_pos_vision.z() + synchronized_att.pose.position.z;
 
-
                msg_drone_pos_vision.header.stamp = ros::Time::now();
                msg_drone_pos_vision.pose.position.x = drone_pos_vision.x();
                msg_drone_pos_vision.pose.position.y = drone_pos_vision.y();
@@ -401,8 +400,6 @@ void tf_param_set() {
     pose_camera_of_drone.x() = tf_camera_drone[0];
     pose_camera_of_drone.y() = tf_camera_drone[1];
     pose_camera_of_drone.z() = tf_camera_drone[2];
-
-
 
     tf_camera_to_drone = Eigen::Isometry3d::Identity();
     tf_camera_to_drone.matrix() << 1, 0, 0, pose_camera_of_drone.x(),
