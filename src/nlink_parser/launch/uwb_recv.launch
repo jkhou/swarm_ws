@@ -1,0 +1,10 @@
+<launch>
+    <arg name="uwb_port" default="/dev/ttyUSB3"/>
+    <node pkg="nlink_parser" type="linktrack" name="linktrack0" output="screen"> -->
+            <param name="port_name" value="$(arg uwb_port)" />
+            <param name="baud_rate" value="921600" />
+    </node>
+
+    <node pkg="nlink_parser" type="gs_uwb_recv" name="gs_uwb_recv" output="screen">
+    </node>
+</launch>

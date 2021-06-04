@@ -1,0 +1,20 @@
+PIDVxyz:
+  [1.40, 0.00, 0.00,
+   1.40, 0.00, 0.00,
+   1.60, 0.50, 0.0 ]
+PIDPxyz:
+  [1.00, 1.00, 1.00]
+CircleKpxy: 6
+CircleKvxy: 6
+CircleKpz: 4
+CircleKvz: 1
+CircleR: 1
+CircleW: 1.5
+StartW: 0
+T_hold: 15
+T_reach: 30
+T_stop: 15
+hover_thrust: 0.27
+hover_height: 0.9
+formationKpxy: 0.3
+formationKpz: 0.2

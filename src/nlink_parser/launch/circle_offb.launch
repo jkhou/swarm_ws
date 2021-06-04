@@ -1,0 +1,17 @@
+<launch>
+	<arg name="swarm_ID" default="1"/>
+
+	<node name="$(anon circle_offb)" pkg="nlink_parser" type="circle_offb" output="screen">
+	    <rosparam command="load" file="$(find nlink_parser)/param/PIDxyz.yaml" />
+	    <rosparam command="load" file="$(find nlink_parser)/param/swarm_init_pos.yaml" />
+		<param name="ctrl_rate" value="30"/>
+		<param name="swarm_ID" value="$(arg swarm_ID)"/>
+        <param name="traj_csv_name" value="/param/circle_flat.csv"/>
+        <param name="repeat_path" value="true"/>
+
+	</node>
+
+    <node name="$(anon mav_smooth)" pkg="nlink_parser" type="mav_smooth.py" output="screen">
+        <param name="swarm_ID" value="$(arg swarm_ID)"/>
+    </node>
+</launch>

@@ -1,0 +1,2 @@
+build/    # 忽略 build/ 目录下的所有文件
+devel/    # 忽略 devel/ 目录下的所有文件 

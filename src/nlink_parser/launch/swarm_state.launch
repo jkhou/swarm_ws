@@ -1,0 +1,18 @@
+<launch>
+	<arg name="swarm_ID" default="1"/>
+	<arg name="save_csv" default="true"/>
+
+	<node name="$(anon swarm_state_est)" pkg="nlink_parser" type="swarm_state_est" output="screen">
+		<rosparam command="load" file="$(find nlink_parser)/param/swarm_init_pos.yaml" />
+		<param name="swarm_ID" value="$(arg swarm_ID)"/>
+		<param name="w_t265" value="20"/>
+		<param name="w_a1" value="1"/>
+		<param name="w_a1hop" value="0.4"/>
+		<param name="w_a2hop" value="0"/>
+		<param name="w_pred" value="1"/>
+		<param name="w_uwb" value="1"/>
+		<param name="save_csv" value="$(arg save_csv)"/>
+		<param name="path_csv" value="/home/up/rosbag/"/>
+	</node>
+
+</launch>
