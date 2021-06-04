@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/up/swarm_ws/src/nlink_parser/src/linktrack/PID.cpp
+PID.h
+/home/up/swarm_ws/src/nlink_parser/src/linktrack/PID.h
+cstdlib
+-
+utility
+-
+stdlib.h
+-
+iostream
+-
+stdio.h
+-
+fstream
+-
+cmath
+-
+string
+/home/up/swarm_ws/src/nlink_parser/src/linktrack/string
+time.h
+-
+queue
+-
+vector
+-
+algorithm
+-
+
+/home/up/swarm_ws/src/nlink_parser/src/linktrack/PID.h
+vector
+-
+

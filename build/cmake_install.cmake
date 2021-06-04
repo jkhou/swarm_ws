@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/up/swarm_ws/build/gtest/cmake_install.cmake")
   include("/home/up/swarm_ws/build/ftmotor/cmake_install.cmake")
+  include("/home/up/swarm_ws/build/nlink_parser/cmake_install.cmake")
   include("/home/up/swarm_ws/build/camera_detect_offb/cmake_install.cmake")
   include("/home/up/swarm_ws/build/vision_to_mavros/cmake_install.cmake")
 

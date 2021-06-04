@@ -89,6 +89,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -111,17 +122,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -213,6 +213,21 @@ usbcam_aruco_detect/fast:
 .PHONY : usbcam_aruco_detect/fast
 
 # Convenience name for target.
+camera_detect_offb/CMakeFiles/camera_test_node.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_test_node.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/camera_test_node.dir/rule
+
+# Convenience name for target.
+camera_test_node: camera_detect_offb/CMakeFiles/camera_test_node.dir/rule
+
+.PHONY : camera_test_node
+
+# fast build rule for target.
+camera_test_node/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_test_node.dir/build.make camera_detect_offb/CMakeFiles/camera_test_node.dir/build
+.PHONY : camera_test_node/fast
+
+# Convenience name for target.
 camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_py.dir/rule:
 	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_py.dir/rule
 .PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_py.dir/rule
@@ -243,64 +258,49 @@ camera_detect_offb_generate_messages_nodejs/fast:
 .PHONY : camera_detect_offb_generate_messages_nodejs/fast
 
 # Convenience name for target.
-camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/rule
+camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/rule
 
 # Convenience name for target.
-camera_detect_offb_generate_messages_lisp: camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/rule
+camera_detect_offb_gennodejs: camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/rule
 
-.PHONY : camera_detect_offb_generate_messages_lisp
+.PHONY : camera_detect_offb_gennodejs
 
 # fast build rule for target.
-camera_detect_offb_generate_messages_lisp/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/build
-.PHONY : camera_detect_offb_generate_messages_lisp/fast
+camera_detect_offb_gennodejs/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/build
+.PHONY : camera_detect_offb_gennodejs/fast
 
 # Convenience name for target.
-camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/rule
+camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/rule
 
 # Convenience name for target.
-camera_detect_offb_geneus: camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/rule
+actionlib_generate_messages_py: camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/rule
 
-.PHONY : camera_detect_offb_geneus
+.PHONY : actionlib_generate_messages_py
 
 # fast build rule for target.
-camera_detect_offb_geneus/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/build
-.PHONY : camera_detect_offb_geneus/fast
+actionlib_generate_messages_py/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
 
 # Convenience name for target.
-camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/rule
+camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-camera_detect_offb_generate_messages_eus: camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/rule
+actionlib_generate_messages_nodejs: camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
-.PHONY : camera_detect_offb_generate_messages_eus
+.PHONY : actionlib_generate_messages_nodejs
 
 # fast build rule for target.
-camera_detect_offb_generate_messages_eus/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/build
-.PHONY : camera_detect_offb_generate_messages_eus/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-camera_detect_offb_generate_messages_cpp: camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/rule
-
-.PHONY : camera_detect_offb_generate_messages_cpp
-
-# fast build rule for target.
-camera_detect_offb_generate_messages_cpp/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/build
-.PHONY : camera_detect_offb_generate_messages_cpp/fast
+actionlib_generate_messages_nodejs/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
 
 # Convenience name for target.
 camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
@@ -318,34 +318,19 @@ sensor_msgs_generate_messages_lisp/fast:
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/rule
+camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-camera_detect_offb_gencpp: camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/rule
+tf_generate_messages_cpp: camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/rule
 
-.PHONY : camera_detect_offb_gencpp
+.PHONY : tf_generate_messages_cpp
 
 # fast build rule for target.
-camera_detect_offb_gencpp/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/build
-.PHONY : camera_detect_offb_gencpp/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+tf_generate_messages_cpp/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/build.make camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
 
 # Convenience name for target.
 camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
@@ -363,109 +348,19 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/rule
+camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_cpp: camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/rule
+camera_detect_offb_generate_messages_cpp: camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/rule
 
-.PHONY : tf_generate_messages_cpp
+.PHONY : camera_detect_offb_generate_messages_cpp
 
 # fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/build.make camera_detect_offb/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/camera_test_node.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_test_node.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/camera_test_node.dir/rule
-
-# Convenience name for target.
-camera_test_node: camera_detect_offb/CMakeFiles/camera_test_node.dir/rule
-
-.PHONY : camera_test_node
-
-# fast build rule for target.
-camera_test_node/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_test_node.dir/build.make camera_detect_offb/CMakeFiles/camera_test_node.dir/build
-.PHONY : camera_test_node/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_eus: camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_eus
-
-# fast build rule for target.
-tf2_msgs_generate_messages_eus/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
-.PHONY : tf2_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
+camera_detect_offb_generate_messages_cpp/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_cpp.dir/build
+.PHONY : camera_detect_offb_generate_messages_cpp/fast
 
 # Convenience name for target.
 camera_detect_offb/CMakeFiles/tf_generate_messages_eus.dir/rule:
@@ -498,96 +393,6 @@ actionlib_msgs_generate_messages_cpp/fast:
 .PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make camera_detect_offb/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_lisp: camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_lisp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_lisp/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
-.PHONY : visualization_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_nodejs: camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-visualization_msgs_generate_messages_nodejs/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
-.PHONY : visualization_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/rule
-
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
 camera_detect_offb/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 .PHONY : camera_detect_offb/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
@@ -601,6 +406,21 @@ actionlib_msgs_generate_messages_nodejs: camera_detect_offb/CMakeFiles/actionlib
 actionlib_msgs_generate_messages_nodejs/fast:
 	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_eus: camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_generate_messages_eus
+
+# fast build rule for target.
+actionlib_generate_messages_eus/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
 
 # Convenience name for target.
 camera_detect_offb/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
@@ -633,19 +453,79 @@ sensor_msgs_generate_messages_nodejs/fast:
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/rule
 
 # Convenience name for target.
-actionlib_generate_messages_eus: camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+tf_generate_messages_py: camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/rule
 
-.PHONY : actionlib_generate_messages_eus
+.PHONY : tf_generate_messages_py
 
 # fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
+tf_generate_messages_py/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/tf_generate_messages_py.dir/build
+.PHONY : tf_generate_messages_py/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_lisp: camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+.PHONY : tf_generate_messages_lisp
+
+# fast build rule for target.
+tf_generate_messages_lisp/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/tf_generate_messages_lisp.dir/build
+.PHONY : tf_generate_messages_lisp/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_eus: camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_eus
+
+# fast build rule for target.
+tf2_msgs_generate_messages_eus/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
+.PHONY : tf2_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+camera_detect_offb_generate_messages_eus: camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/rule
+
+.PHONY : camera_detect_offb_generate_messages_eus
+
+# fast build rule for target.
+camera_detect_offb_generate_messages_eus/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_eus.dir/build
+.PHONY : camera_detect_offb_generate_messages_eus/fast
 
 # Convenience name for target.
 camera_detect_offb/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
@@ -678,49 +558,19 @@ tf2_msgs_generate_messages_nodejs/fast:
 .PHONY : tf2_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-actionlib_generate_messages_nodejs: camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+camera_detect_offb_generate_messages_lisp: camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/rule
 
-.PHONY : actionlib_generate_messages_nodejs
+.PHONY : camera_detect_offb_generate_messages_lisp
 
 # fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/rule
-
-# Convenience name for target.
-camera_detect_offb_gennodejs: camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/rule
-
-.PHONY : camera_detect_offb_gennodejs
-
-# fast build rule for target.
-camera_detect_offb_gennodejs/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_gennodejs.dir/build
-.PHONY : camera_detect_offb_gennodejs/fast
-
-# Convenience name for target.
-camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/build.make camera_detect_offb/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
+camera_detect_offb_generate_messages_lisp/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_generate_messages_lisp.dir/build
+.PHONY : camera_detect_offb_generate_messages_lisp/fast
 
 # Convenience name for target.
 camera_detect_offb/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
@@ -918,6 +768,81 @@ visualization_msgs_generate_messages_cpp/fast:
 .PHONY : visualization_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/rule
+
+# Convenience name for target.
+camera_detect_offb_geneus: camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/rule
+
+.PHONY : camera_detect_offb_geneus
+
+# fast build rule for target.
+camera_detect_offb_geneus/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_geneus.dir/build
+.PHONY : camera_detect_offb_geneus/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_detect_offb/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/rule
+
+# Convenience name for target.
+camera_detect_offb_gencpp: camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/rule
+
+.PHONY : camera_detect_offb_gencpp
+
+# fast build rule for target.
+camera_detect_offb_gencpp/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/build.make camera_detect_offb/CMakeFiles/camera_detect_offb_gencpp.dir/build
+.PHONY : camera_detect_offb_gencpp/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_lisp: camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+.PHONY : camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_nodejs: camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+visualization_msgs_generate_messages_nodejs/fast:
+	cd /home/up/swarm_ws/build && $(MAKE) -f camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
+.PHONY : visualization_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
 	cd /home/up/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
 .PHONY : camera_detect_offb/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
@@ -1079,43 +1004,33 @@ help:
 	@echo "... path_follow_offb"
 	@echo "... edit_cache"
 	@echo "... usbcam_aruco_detect"
+	@echo "... camera_test_node"
 	@echo "... camera_detect_offb_generate_messages_py"
 	@echo "... camera_detect_offb_generate_messages_nodejs"
-	@echo "... camera_detect_offb_generate_messages_lisp"
-	@echo "... camera_detect_offb_geneus"
-	@echo "... camera_detect_offb_generate_messages_eus"
-	@echo "... camera_detect_offb_generate_messages_cpp"
+	@echo "... camera_detect_offb_gennodejs"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... test"
+	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... install/local"
 	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... camera_detect_offb_gencpp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... camera_test_node"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... camera_detect_offb_generate_messages_cpp"
 	@echo "... tf_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... visualization_msgs_generate_messages_nodejs"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... tf_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... actionlib_generate_messages_eus"
 	@echo "... rebuild_cache"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_eus"
+	@echo "... tf_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... tf_generate_messages_lisp"
+	@echo "... tf2_msgs_generate_messages_eus"
+	@echo "... camera_detect_offb_generate_messages_eus"
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... test"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... camera_detect_offb_gennodejs"
-	@echo "... actionlib_generate_messages_py"
+	@echo "... camera_detect_offb_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_lisp"
@@ -1130,6 +1045,11 @@ help:
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_cpp"
+	@echo "... camera_detect_offb_geneus"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... camera_detect_offb_gencpp"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... src/camera_test.o"
 	@echo "... src/camera_test.i"

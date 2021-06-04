@@ -1,8 +1,0 @@
-prefix=/home/up/swarm_ws/devel
-
-Name: camera_detect
-Description: Description of camera_detect
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: message_runtime

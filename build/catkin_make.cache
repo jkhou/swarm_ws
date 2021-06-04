@@ -1,2 +1,2 @@
-camera_detect_offb:ftmotor:vision_to_mavros
+camera_detect_offb:ftmotor:nlink_parser:vision_to_mavros
 -DCATKIN_DEVEL_PREFIX=/home/up/swarm_ws/devel -DCMAKE_INSTALL_PREFIX=/home/up/swarm_ws/install -G Unix Makefiles
